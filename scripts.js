@@ -180,11 +180,14 @@ function playRandomAudio() {
     audioTitleRight.textContent = audioFiles[currentIndex].split('.')[0]
 
     // Event listener for ended event to play the next random audio
-    audioPlayer.onended = playRandomAudio;
+    audioPlayerMain.onended = playRandomAudio;
+    audioPlayerRight.onended = playRandomAudio;
 
     // Load and play the new audio
-    audioPlayer.load();
-    audioPlayer.play();
+    audioPlayerMain.load();
+    audioPlayerRight.load();
+    audioPlayerMain.play();
+    audioPlayerRight.play();
 }
 
 // Fetch audio list and start playing
