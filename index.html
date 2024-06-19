@@ -5,160 +5,60 @@
     <meta charset="UTF-8">
     <title>IvoRaadio</title>
 
-    <style>
-        .collapsible {
-            background-color: #932;
-            color: white;
-            cursor: pointer;
-            padding: 20px;
-            width: 70%;
-            border: none;
-            text-align: center;
-            outline: none;
-            font-size: 17px;
-        }
-
-        .active, .collapsible:hover {
-            background-color: #651;
-        }
-
-        .content {
-            padding: 0 18px;
-            display: none;
-            overflow: hidden;
-            background-color: powderblue;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 
 </head>
 
-<script type="text/javascript">
-    var script = document.createElement('script');
+<body>
 
-    script.src = "scripts.js";
+    <div class="header-adds">
+        <div><a
+                href="https://aknakoda.ee/"><img
+                src="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
+                alt="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
+                width="auto"
+                height="auto">
+            </a></div>
+        <div><a
+                href="https://aknakoda.ee/tagasiside/"><img
+                src="https://aknakoda.ee/wp-content/uploads/2017/03/ivo.jpg"
+                alt="https://aknakoda.ee/wp-content/uploads/2017/03/ivo.jpg"
+                width="auto"
+                height="auto">
+        </a></div>
+        <div><a
+                href="https://aknakoda.ee/"><img
+                src="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
+                alt="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
+                width="auto"
+                height="auto">
+        </a></div>
+    </div>
 
-    document.head.appendChild(script)
-</script>
+    <div class="main-content">
+        <div class="left-side"></div>
+        <div class="main-area">
 
-<body style="background-color:powderblue;">
+            <h1>Random Audio Player</h1>
+            <audio id="audioPlayer2" controls>
+                <source src="Songs/Ivo%20ega%20sa%20veel%20ei%20läe.mp3"
+                        type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
 
-<center>
+            <div class="main-title">
+                See on IvoRaadio <span class="mhz-title">88.8 mHz</span>
+            </div>
 
-    <a
-            href="https://aknakoda.ee/"><img
-            src="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
-            alt="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
-            width="40%"
-            height="auto">
-    </a>
-    <a
-            href="https://aknakoda.ee/tagasiside/"><img
-            src="https://aknakoda.ee/wp-content/uploads/2017/03/ivo.jpg"
-            alt="https://aknakoda.ee/wp-content/uploads/2017/03/ivo.jpg"
-            width="17%"
-            height="auto">
-    </a>
-    <a
-            href="https://aknakoda.ee/"><img
-            src="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
-            alt="https://aknakoda.ee/wp-content/uploads/2017/08/aknakoda-logo-2.jpg"
-            width="40%"
-            height="auto">
-    </a>
 
-    <br>
-    <br>
-    <br>
-    <br>
+            <div class="list-title">Eetris olnud saated:</div>
+            <br>
 
-    <span
-            style="color:Tomato;
-            font-size:600%;
-            font-family:Brush Script MT">
-        See on IvoRaadio
-    </span>
-
-    <span
-            style="color:Red;
-            font-size:200%;
-            font-family:Brush Script MT">
-        88.8 mHz
-    </span>
-
-    <br>
-
-    <audio id="currently_playing" controls autoplay muted>
-        <source
-                src=
-                type="audio/mpeg"
-                Ivol on südamest kahju, kuid teie brauser ei toeta audiofailide esitamist>
-    </audio>
-    <br>
-
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
-            <img src="https://p.ocdn.ee/53/i/2014/10/23/woysi0dl.tse.jpg"
-                 alt="https://p.ocdn.ee/53/i/2014/10/23/woysi0dl.tse.jpg"
-                 width="40%"
-                 height="auto"></a>
-
-        <p style="font-size:300%; font-family:Brush Script MT">
-            Ostke aknad ikka aknakojast!</p>
-    <pre style="font-family:courier;"></pre>
-
-<button
-        type="button"
-        class="collapsible">
-    Heeringas Ivo, ehk sünnipäevalaul Ivole (12.06.2022)
-</button>
-<div class="content">
-  <pre>See oli ennemuistsel a'al
-kui Ivo elas Muhumaal
-
-Sireeni kombel üürates
-ta laevu tõmbas karidel'
-
-Kord kaljas kahe mastiga
-läks teele klaasist lastiga
-
-Seal laeval oli vana mees
-kes kõiki karmilt hoiatas
-
-Kui Muhu saarest möödume
-siis kõrvad kinni toppige
-
-Ent kapten naeris "Ah see jutt
-on tühipaljas muinasjutt"
-
-Ei pannud naerdes tähele
-et ajas laeva karile
-
-Siis Aknakoja lastiga
-läks põhja kaljas sulpsuga
-
-Suur Tõll seepeale vihastas
-ja Ivo peale käratas
-
-"Et lauldes koorma aknaid häid
-ja uue laeva põhja tõid
-
-See karistuseks käredal
-pead laulma häälel jämedal
-
-Sa kõigil' rääkima veel pead
-et Aknakoja aknad head"
-
-Ja sellest ajast tõsi see
-on Ivo Linna laulumees</pre>
-</div>
-
-    <pre style="color:black; font-size:16px; font-family:courier;"></pre>
-    <h3>Eetris olnud saated:</h3><pre style="color:green; font-size:16px; font-family:courier;"></pre>
-
-    <pre style="color:green">
+            <div class="episodes">
 <a href="https://drive.google.com/file/d/1Bt9dlGlLxpnoIKUbT2NQGmMM9m-7Tgsr/view?usp=sharing">Jaani Mix</a> / juuni 2022<br>
 <a href="https://drive.google.com/drive/folders/13uHajUOkZvbL5Swo8-1exGbFHs-XRhkm?usp=sharing">Jüriöö vahepalad</a> / aprill 2022<br>
 <a href="https://drive.google.com/file/d/1pEpcG-HGA_rpe2wNKvkZvK4EEOECcx0A/view?usp=sharing">MarkoSünnaEri</a> / aprill 2022<br>
-<a href="https://drive.google.com/file/d/1YTZtH-WFkuUc061a7Kbni_VZj4GF3ge2/view?usp=sharing">G nimepäev Ivoga</a> <a href="https://drive.google.com/file/d/191qnKQQ0iXG89PxBPOuHbh1YuNiPU4UY/view?usp=sharing">(laul)</a> / märts 2022<br>
+<a href="https://drive.google.com/file/d/1YTZtH-WFkuUc061a7Kbni_VZj4GF3ge2/view?usp=sharing">G nimepäev Ivoga</a> <a class="extra" href="https://drive.google.com/file/d/191qnKQQ0iXG89PxBPOuHbh1YuNiPU4UY/view?usp=sharing">(laul)</a> / märts 2022<br>
 <a href="https://drive.google.com/file/d/13opiJ-hyl_rQkMoaAOSK1NgrGjJKWMmU/view?usp=sharing">Sõbrad, vastlad ja vabariik</a> / veebruar 2022<br>
 <a href="https://drive.google.com/file/d/11vjuLBxBH4U1qJ4_RNwbMsTc7R8L-SAG/view?usp=sharing">Näärid Ivoga (II osa)</a> / detsember 2021<br>
 <a href="https://drive.google.com/file/d/1PmrCjGL3F1hQtFdfT6YWh3mwLlSH5dHr/view?usp=sharing">Näärid Ivoga (I osa)</a> / detsember 2021<br>
@@ -168,73 +68,20 @@ on Ivo Linna laulumees</pre>
 <a href="https://drive.google.com/file/d/1wFyPRRE-msBXW7jzpJM4JG4f-plbh5Se/view?usp=sharing">Ivo Mixtape 2</a> / august 2021<br>
 <a href="https://drive.google.com/file/d/1QGM4xm_meQLe9rPIxpxoNYW8bcSMF1na/view?usp=sharing">Ivo Mixtape</a> / juuni 2021<br>
 <a href="https://drive.google.com/file/d/1mlbztPXYr8oqEkvxy4EK1FW6ol8XPyxG/view?usp=sharing">Ivoraadio üle Kadiraadio</a> / mai 2021<br>
-    </pre>
-        <pre style="color:black"></pre>
-    <h3>Mõned vanade eestlaste ütlemised:</h3>
-    <pre style="color:purple; font-size:16px; font-family:courier;">
-Aeg aitab konna mättale ja kehva kannikale.
-Aegamööda saab härg jänesele järele.
-Enam vana kasukas kui uus kuub.
-Habe kasvab kärmemini kui aru.
-Hulgusel kodu kõikjal.
-Jänes teeb öösi rohkem jälgi kui lammas kogu suvel.
-Kaks kassi ei sünni ühte kotti.
-Kel pole tööd, otsib tööd.
-Kes tööd teeb, mustaks saab.
-Kus saun, seal eestlased.
-Mõnda juhtub tegijal, magajal ei midagi.
-Rääkimine hõbe vaikimine kuld.
-    </pre>
-<pre style="color:black"></pre>
-<style>
-table, th, td {border:1px solid black;}
-</style>
+            </div>
 
-<h3>Populaarseimad tooted aastal 2021:</h3>
-<table style="width:70%; color:blue; font-size:16px">
-  <tr>
-    <th>Toode</th>
-    <th>Lisainfo</th>
-    <th>Hind</th>
-  </tr>
-  <tr>
-    <td>Väike aken (mudel)</td>
-    <td>Autogrammiga</td>
-    <td>alates 9 eurost</td>
-  </tr>
-  <tr>
-    <td>Klaaskuju</td>
-    <td>Elusuuruses</td>
-    <td>kokkuleppel</td>
-  </tr>
-  <tr>
-    <td>Kruus</td>
-    <td>Kollane, logoga</td>
-    <td>14 eurot</td>
-  </tr>
-</table>
-
-<pre style="color:green; font-size:26px; font-family:courier;">
-Kirjutage ja joonistage meile!
-raadio.ivo@gmail.com
-</pre>
-
-<span style="color:Black; font-size:40px; font-family:Brush Script MT">Vaata</span> <span style="color:Tomato; font-size:45px; font-family:Brush Script MT">IvoRaadiosse</span> <span style="color:Black; font-size:40px; font-family:Brush Script MT">saadetud pildigaleriid,
-klõpsates sellele pildile:</span>
-    <br>
-<a href="https://drive.google.com/drive/folders/1sdxJj_irmrW1XTSJ0P7N0uJcCxP3_1bx?usp=sharing">
-    <img src="https://cdn-icons-png.flaticon.com/512/191/191714.png"
-         alt="https://cdn-icons-png.flaticon.com/512/191/191714.png"
-         width="20%"
-         height="auto">
-</a>
+            <br>
 
 
-<p
-        style="font-size:14px; color: black">
-    213305IADB
-</p>
-</center>
+        </div>
+        <div class="right-side"></div>
+    </div>
+
+    <div class="footer">
+        <br>
+    </div>
+
+    <script src="scripts.js"></script>
 
 </body>
-
+</html>

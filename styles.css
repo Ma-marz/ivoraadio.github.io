@@ -1,0 +1,142 @@
+body {
+    background-color:powderblue;
+}
+
+.header-adds {
+    display: grid;
+    grid-template-columns: auto 13.55% auto;
+}
+
+.header-adds > div {
+    text-align: center;
+}
+
+.header-adds > div > a > img {
+    width: 100%;
+    object-fit: fill;
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 10% auto 20%;
+}
+
+.left-side {
+    background-color: #97c2d8;
+}
+
+.main-area {
+    text-align: center;
+}
+
+.right-side {
+    background-color: #97c2d8;
+}
+
+.main-title {
+    color:Tomato;
+    font-size:8vw;
+    font-family: Brush Script MT, serif;
+}
+
+.mhz-title {
+    color:Red;
+    font-size:4vw;
+    font-family: Brush Script MT, serif
+}
+
+.list-title {
+    color:black;
+    font-size:18px;
+    font-family:courier, serif;
+
+}
+
+.episodes {
+    color: #4e899a;
+    font-size:16px;
+    font-family:courier, serif;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
+
+.episodes > a {
+    text-decoration-style: dotted;
+    color: green;
+
+}
+
+.episodes > a.extra {
+    text-decoration-style: dotted;
+    color: #4e899a;
+}
+
+.footer {
+    height: auto;
+    margin: 6px 0;
+    background-color: #97c2d8;
+}
+
+
+
+@media (max-width: 650px) {
+
+    .main-content {
+        display: grid;
+        grid-template-columns: 2% auto 5%;
+    }
+
+    .main-title {
+        font-size:10vw;
+    }
+
+    .mhz-title {
+        font-size:4vw;
+    }
+
+    .list-title {
+        color:black;
+        font-size:3vw;
+        font-family:courier, serif;
+    }
+
+    .episodes {
+        font-size:3vw;
+        font-family:courier, serif;
+        line-height: 1.6;
+        letter-spacing: 0.5px;
+        word-spacing: 1px;
+    }
+
+    .episodes > a {
+    }
+
+    .footer {
+    }
+}
+
+
+
+.collapsible {
+    background-color: #932;
+    color: white;
+    cursor: pointer;
+    padding: 20px;
+    width: 70%;
+    border: none;
+    text-align: center;
+    outline: none;
+    font-size: 17px;
+}
+
+.active, .collapsible:hover {
+    background-color: #651;
+}
+
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    background-color: powderblue;
+}
