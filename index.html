@@ -39,10 +39,14 @@
         <div class="left-side"></div>
         <div class="main-area">
 
-            <audio id="audioPlayer" controls>
-                <source>
-                Your browser does not support the audio element.
-            </audio>
+            <div class="audio-area-main">
+                <div class="currently-playing-main-title">Hetkel eetris: </div><div class="currently-playing-song-title" id="currentSongMain"></div>
+
+                <audio id="audioPlayerMain" controls>
+                    <source>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
 
             <div class="main-title">
                 See on IvoRaadio <span class="mhz-title">88.8 mHz</span>
@@ -72,7 +76,16 @@
 
 
         </div>
-        <div class="right-side"></div>
+        <div class="right-side">
+            <div class="audio-area-side">
+                <div class="currently-playing-main-title">Hetkel eetris: </div><div class="currently-playing-song-title" id="currentSongRight"></div>
+
+                <audio id="audioPlayerRight" controls>
+                    <source>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+        </div>
     </div>
 
     <div class="footer">

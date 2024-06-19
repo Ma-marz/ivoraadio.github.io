@@ -18,7 +18,7 @@ body {
 
 .main-content {
     display: grid;
-    grid-template-columns: 10% auto 20%;
+    grid-template-columns: 10% auto auto;
 }
 
 .left-side {
@@ -31,6 +31,21 @@ body {
 
 .right-side {
     background-color: #97c2d8;
+    text-align: center;
+}
+
+.audio-area-side {
+    display: block;
+    margin: 20px 5px;
+}
+
+.audio-area-main {
+    display: none;
+    margin: 20px 5px;
+}
+
+#audioPlayerMain, #audioPlayerRight {
+    margin: 15px 0;
 }
 
 .main-title {
@@ -43,6 +58,18 @@ body {
     color:Red;
     font-size:4vw;
     font-family: Brush Script MT, serif
+}
+
+.currently-playing-main-title {
+    color:black;
+    font-size:18px;
+    font-family:courier, serif;
+}
+
+.currently-playing-song-title {
+    color:black;
+    font-size:14px;
+    font-family:courier, serif;
 }
 
 .list-title {
@@ -85,6 +112,14 @@ body {
     .main-content {
         display: grid;
         grid-template-columns: 2% auto 5%;
+    }
+
+    .audio-area-side {
+        display: none;
+    }
+
+    .audio-area-main {
+        display: block;
     }
 
     .main-title {

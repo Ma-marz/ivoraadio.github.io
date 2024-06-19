@@ -158,7 +158,10 @@ async function fetchAudioList() {
 
 // Function to play random audio
 function playRandomAudio() {
-    const audioPlayer = document.getElementById('audioPlayer');
+    const audioPlayerMain = document.getElementById('audioPlayerMain');
+    const audioPlayerRight = document.getElementById('audioPlayerRight');
+    const audioTitleMain = document.getElementById('currentSongMain');
+    const audioTitleRight = document.getElementById('currentSongRight');
 
     // Pick a random index different from the current one
     let newIndex = currentIndex;
@@ -168,8 +171,13 @@ function playRandomAudio() {
     currentIndex = newIndex;
 
     // Set source of the audio player
-    audioPlayer.src = `audio/${audioFiles[currentIndex]}`;
-    audioPlayer.type = 'audio/mpeg'; // Adjust type as needed
+    audioPlayerMain.src = `audio/${audioFiles[currentIndex]}`;
+    audioPlayerMain.type = 'audio/mpeg'; // Adjust type as needed
+    audioTitleMain.textContent = audioFiles[currentIndex].split('.')[0]
+
+    audioPlayerRight.src = `audio/${audioFiles[currentIndex]}`;
+    audioPlayerRight.type = 'audio/mpeg'; // Adjust type as needed
+    audioTitleRight.textContent = audioFiles[currentIndex].split('.')[0]
 
     // Event listener for ended event to play the next random audio
     audioPlayer.onended = playRandomAudio;
