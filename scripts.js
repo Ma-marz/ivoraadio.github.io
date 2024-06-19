@@ -137,37 +137,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 */
 
-// Function to fetch the audio links from the text file
-async function fetchAudioLinks() {
-    const response = await fetch('episodes.txt');
-    const data = await response.text();
-    return data.split('\n').filter(link => link.trim() !== '');
+// Function to fetch the audio file list from the server
+async function fetchAudioFiles() {
+    const response = await fetch('listAudioFiles.php');
+    const files = await response.json();
+    return files.map(file => `audio/${file}`);
 }
 
-// Function to convert Google Drive link to direct link
-function convertToDirectLink(driveLink) {
-    const fileId = driveLink.match(/[-\w]{25,}/);
-    return fileId ? `https://drive.google.com/uc?export=download&id=${fileId[0]}` : null;
-}
-
-// Function to play a random audio file from the list
+// Function to play a random audio file
 async function playRandomAudio() {
-    const audioLinks = await fetchAudioLinks();
+    const audioFiles = await fetchAudioFiles();
     const audioPlayer = document.getElementById('audioPlayer');
 
-    function getRandomLink() {
-        const randomIndex = Math.floor(Math.random() * audioLinks.length);
-        return convertToDirectLink(audioLinks[randomIndex]);
+    function getRandomFile() {
+        const randomIndex = Math.floor(Math.random() * audioFiles.length);
+        return audioFiles[randomIndex];
     }
 
     function playNext() {
-        const nextLink = getRandomLink();
-        if (nextLink) {
-            audioPlayer.src = nextLink;
-            audioPlayer.play();
-        } else {
-            console.error("Invalid Google Drive link");
-        }
+        const nextFile = getRandomFile();
+        audioPlayer.src = nextFile;
+        audioPlayer.play();
     }
 
     audioPlayer.addEventListener('ended', playNext);
