@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 // Function to fetch the audio file list from the server
 async function fetchAudioFiles() {
     const response = await fetch('listAudioFiles.php');
+    console.log(response)
     const files = await response.json();
     return files.map(file => `audio/${file}`);
 }
