@@ -133,14 +133,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
 });
 
-
-
 */
 
 
 let audioFiles = []; // Array to store audio file names
 let currentIndex = -1; // Index to track current audio file
-let playerType = 'main';
 
 // Function to fetch and process JSON data
 async function fetchAudioList() {
@@ -171,14 +168,20 @@ function playRandomAudio() {
     }
     currentIndex = newIndex;
 
-    // Set source of the audio player
-    audioPlayerMain.src = `audio/${audioFiles[currentIndex]}`;
-    audioPlayerMain.type = 'audio/mpeg'; // Adjust type as needed
-    audioTitleMain.textContent = audioFiles[currentIndex].split('.')[0]
+    let audio_src = `audio/${audioFiles[currentIndex]}`;
+    let audio_name = audioFiles[currentIndex].split('.')[0];
+    if (audio_name.startsWith("audio_adds")) {
+        audio_name = "reklaamipaus"
+    }
 
-    audioPlayerRight.src = `audio/${audioFiles[currentIndex]}`;
+    // Set source of the audio player
+    audioPlayerMain.src = audio_src;
+    audioPlayerMain.type = 'audio/mpeg'; // Adjust type as needed
+    audioTitleMain.textContent = audio_name;
+
+    audioPlayerRight.src = audio_src;
     audioPlayerRight.type = 'audio/mpeg'; // Adjust type as needed
-    audioTitleRight.textContent = audioFiles[currentIndex].split('.')[0]
+    audioTitleRight.textContent = audio_name;
 
     // Event listener for ended event to play the next random audio
     audioPlayerMain.onended = playRandomAudioMain;
@@ -203,5 +206,6 @@ function playRandomAudioRight() {
     audioPlayerRight.load();
     audioPlayerRight.play();
 }
+
 // Fetch audio list and start playing
 document.addEventListener('DOMContentLoaded', fetchAudioList);
