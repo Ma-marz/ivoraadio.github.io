@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let audioFiles = []; // Array to store audio file names
 let currentIndex = -1; // Index to track current audio file
+let playerType = 'main';
 
 // Function to fetch and process JSON data
 async function fetchAudioList() {
@@ -159,8 +160,8 @@ async function fetchAudioList() {
 // Function to play random audio
 function playRandomAudio() {
     const audioPlayerMain = document.getElementById('audioPlayerMain');
-    const audioPlayerRight = document.getElementById('audioPlayerRight');
     const audioTitleMain = document.getElementById('currentSongMain');
+    const audioPlayerRight = document.getElementById('audioPlayerRight');
     const audioTitleRight = document.getElementById('currentSongRight');
 
     // Pick a random index different from the current one
@@ -180,15 +181,27 @@ function playRandomAudio() {
     audioTitleRight.textContent = audioFiles[currentIndex].split('.')[0]
 
     // Event listener for ended event to play the next random audio
-    audioPlayerMain.onended = playRandomAudio;
-    audioPlayerRight.onended = playRandomAudio;
+    audioPlayerMain.onended = playRandomAudioMain;
+    audioPlayerRight.onended = playRandomAudioRight;
 
-    // Load and play the new audio
-    audioPlayerMain.load();
-    audioPlayerRight.load();
-    audioPlayerMain.play();
-    audioPlayerRight.play();
 }
 
+function playRandomAudioMain() {
+    const audioPlayerMain = document.getElementById('audioPlayerMain');
+
+    playRandomAudio()
+
+    audioPlayerMain.load();
+    audioPlayerMain.play();
+}
+
+function playRandomAudioRight() {
+    const audioPlayerRight = document.getElementById('audioPlayerRight');
+
+    playRandomAudio()
+
+    audioPlayerRight.load();
+    audioPlayerRight.play();
+}
 // Fetch audio list and start playing
 document.addEventListener('DOMContentLoaded', fetchAudioList);
