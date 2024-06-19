@@ -137,37 +137,47 @@ document.addEventListener('DOMContentLoaded', function() {
 
 */
 
-// Function to fetch the audio file list from the server
-async function fetchAudioFiles() {
-    console.log('test')
-    const response = await fetch('listAudioFiles.php');
-    console.log(response)
-    const files = await response.json();
-    return files.map(file => `audio/${file}`);
+
+let audioFiles = []; // Array to store audio file names
+let currentIndex = -1; // Index to track current audio file
+
+// Function to fetch and process JSON data
+async function fetchAudioList() {
+    try {
+        const response = await fetch('audioFiles.json'); // Path to your JSON file
+        if (!response.ok) {
+            throw new Error('Failed to fetch audio files');
+        }
+        audioFiles = await response.json();
+        console.log('Audio files:', audioFiles);
+        playRandomAudio();
+    } catch (error) {
+        console.error('Error fetching audio files:', error);
+    }
 }
 
-// Function to play a random audio file
-async function playRandomAudio() {
-    const audioFiles = await fetchAudioFiles();
+// Function to play random audio
+function playRandomAudio() {
     const audioPlayer = document.getElementById('audioPlayer');
 
-    function getRandomFile() {
-        const randomIndex = Math.floor(Math.random() * audioFiles.length);
-        return audioFiles[randomIndex];
+    // Pick a random index different from the current one
+    let newIndex = currentIndex;
+    while (newIndex === currentIndex) {
+        newIndex = Math.floor(Math.random() * audioFiles.length);
     }
+    currentIndex = newIndex;
 
-    function playNext() {
-        const nextFile = getRandomFile();
-        audioPlayer.src = nextFile;
-        audioPlayer.play();
-    }
+    // Set source of the audio player
+    audioPlayer.src = `audio/${audioFiles[currentIndex]}`;
+    audioPlayer.type = 'audio/mpeg'; // Adjust type as needed
 
-    audioPlayer.addEventListener('ended', playNext);
+    // Event listener for ended event to play the next random audio
+    audioPlayer.onended = playRandomAudio;
 
-    // Play the first random audio file
-    playNext();
+    // Load and play the new audio
+    audioPlayer.load();
+    audioPlayer.play();
 }
 
-// Initialize the audio player
-playRandomAudio();
-
+// Fetch audio list and start playing
+document.addEventListener('DOMContentLoaded', fetchAudioList);
