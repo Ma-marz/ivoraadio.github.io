@@ -18,7 +18,7 @@ body {
 
 .main-content {
     display: grid;
-    grid-template-columns: 10% auto auto;
+    grid-template-columns: 10% auto min-content;
 }
 
 .left-side {
@@ -32,6 +32,7 @@ body {
 .right-side {
     background-color: #97c2d8;
     text-align: center;
+    width: min-content;
 }
 
 .audio-area-side {
@@ -46,6 +47,10 @@ body {
 
 #audioPlayerMain, #audioPlayerRight {
     margin: 15px 0;
+}
+
+#audioPlayerRight {
+    width: min-content;
 }
 
 .main-title {
